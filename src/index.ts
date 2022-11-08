@@ -1,7 +1,9 @@
 import fastify from 'fastify'
+import os from 'node:os'
 
 const server = fastify()
 server.get('/ping', async (request, reply) => {
+  console.log("" + os.hostname)
   return JSON.stringify(request.headers)
 })
 
